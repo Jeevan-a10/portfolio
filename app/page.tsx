@@ -38,6 +38,17 @@ export default function Home() {
 
   const projects = [
     {
+      title: "DevPulse",
+      subtitle: "Developer Workspace & Milestone Tracker",
+      description:
+        "Engineered a production-ready developer workspace with real-time analytics, RBAC JWT auth, 47 automated tests, in-memory MongoDB fallback, and live event audit streaming.",
+      tags: ["Next.js 16", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth"],
+      liveUrl: "https://devpulse-dashboard-pi.vercel.app/login",
+      githubUrl: "https://github.com/Jeevan-a10/devpulse-dashboard",
+      category: "Full-Stack SaaS",
+      metric: "Live in Production",
+    },
+    {
       title: "Khata Tracker",
       subtitle: "Enterprise Business Finance & Ledger Platform",
       description:
@@ -177,7 +188,7 @@ export default function Home() {
 
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://github.com/Jeevan-2003196"
+              href="https://github.com/Jeevan-a10"
               target="_blank"
               rel="noreferrer"
               className="p-2 text-slate-400 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors"
@@ -312,7 +323,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://github.com/Jeevan-2003196"
+                  href="https://github.com/Jeevan-a10"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-slate-200 font-medium text-sm transition-all duration-300"
@@ -513,7 +524,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://github.com/Jeevan-2003196"
+              href="https://github.com/Jeevan-a10"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -523,7 +534,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((proj, idx) => (
               <div
                 key={idx}
@@ -564,16 +575,27 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="pt-1">
+                  <div className="pt-1 flex items-center gap-2">
                     <a
                       href={proj.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/20 text-xs font-semibold transition-all duration-300"
+                      className="inline-flex items-center justify-center gap-2 flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/20 text-xs font-semibold transition-all duration-300"
                     >
                       <span>Explore Live Application</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </a>
+                    {proj.githubUrl && (
+                      <a
+                        href={proj.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/[0.08] text-xs font-semibold transition-all duration-300"
+                        title="View Source on GitHub"
+                      >
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -713,7 +735,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://github.com/Jeevan-2003196"
+                  href="https://github.com/Jeevan-a10"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.12] text-slate-200 font-semibold text-xs border border-white/[0.1] transition-all"
