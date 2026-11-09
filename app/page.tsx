@@ -43,57 +43,57 @@ export default function Home() {
       subtitle: "Real-Time Collaborative Workspace & Document Engine",
       description:
         "Engineered a real-time collaborative workspace featuring conflict-free WebSocket synchronization, monotonic revisions, 20fps live SVG cursor canvas, rich Markdown formatting toolbar, templates, export hub, and dual-mode persistence (57 automated tests).",
-      tags: ["Personal Project", "Next.js 16", "React 19", "Socket.io", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Docker"],
+      tags: ["Open Source", "Next.js 16", "React 19", "Socket.io", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Docker"],
       liveUrl: "https://syncspace-dashboard.vercel.app",
       githubUrl: "https://github.com/Jeevan-a10/syncspace-dashboard",
-      projectType: "Personal Project",
-      category: "Real-Time Collaboration",
-      metric: "Live in Production",
+      projectType: "Personal / Open Source",
+      category: "Real-Time Engine",
+      metric: "57 Tests • Live in Production",
     },
     {
       title: "DevPulse",
       subtitle: "Developer Workspace & Milestone Tracker",
       description:
-        "Engineered a production-ready developer workspace with real-time analytics, RBAC JWT auth, 47 automated tests, in-memory MongoDB fallback, and live event audit streaming.",
-      tags: ["Personal Project", "Next.js 16", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth", "Docker"],
+        "Engineered a production-ready developer workspace with real-time analytics, RBAC JWT auth, 57 automated tests, in-memory MongoDB fallback, and live event audit streaming.",
+      tags: ["Open Source", "Next.js 16", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth", "Docker"],
       liveUrl: "https://devpulse-dashboard-pi.vercel.app/login",
       githubUrl: "https://github.com/Jeevan-a10/devpulse-dashboard",
-      projectType: "Personal Project",
-      category: "Full-Stack SaaS",
-      metric: "Live in Production",
+      projectType: "Personal / Open Source",
+      category: "Developer SaaS",
+      metric: "57 Tests • Live in Production",
     },
     {
       title: "Khata Tracker",
       subtitle: "Enterprise Business Finance & Ledger Platform",
       description:
         "Engineered financial accounting dashboards and analytics modules. Integrated dynamic client workflows with robust microservices REST APIs for high-throughput business reporting.",
-      tags: ["Company Project", "React.js", "Spring Boot", "Microservices", "REST APIs", "PostgreSQL"],
+      tags: ["Company Work", "React.js", "Spring Boot", "Microservices", "REST APIs", "PostgreSQL"],
       liveUrl: "https://khatatracker.com/",
-      projectType: "Company Project",
+      projectType: "Company Work",
       category: "FinTech Platform",
-      metric: "Enterprise Production",
+      metric: "Commercial Production",
     },
     {
       title: "EKAM Network",
       subtitle: "B2B Enterprise Business Network",
       description:
         "Built responsive web interfaces with state management, dynamic form validation, and secure authentication flows. Integrated multi-role access control for enterprise clients.",
-      tags: ["Company Project", "React.js", "Node.js", "REST APIs", "State Management", "Tailwind CSS"],
+      tags: ["Company Work", "React.js", "Node.js", "REST APIs", "State Management", "Tailwind CSS"],
       liveUrl: "https://www.ekamnetwork.com/login",
-      projectType: "Company Project",
+      projectType: "Company Work",
       category: "Enterprise Suite",
-      metric: "Active Users",
+      metric: "Active Enterprise Users",
     },
     {
       title: "Hotel Srisaila's Nest",
       subtitle: "Hospitality & Room Booking Platform",
       description:
         "Developed a mobile-optimized hotel website featuring interactive room galleries, real-time enquiry workflows, and streamlined reservation inquiries.",
-      tags: ["Company Project", "React.js", "JavaScript (ES6+)", "Responsive UI", "Booking APIs"],
+      tags: ["Client Project", "React.js", "JavaScript (ES6+)", "Responsive UI", "Booking APIs"],
       liveUrl: "https://www.hotelsrisailasnest.com/",
-      projectType: "Company Project",
+      projectType: "Company Work",
       category: "Hospitality Web",
-      metric: "Live & Responsive",
+      metric: "Client Production",
     },
   ];
 
@@ -561,7 +561,7 @@ export default function Home() {
                   : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
               }`}
             >
-              All Projects ({projects.length})
+              All Work ({projects.length})
             </button>
             <button
               onClick={() => setProjectFilter("personal")}
@@ -571,7 +571,7 @@ export default function Home() {
                   : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
               }`}
             >
-              Personal Builds ({projects.filter((p) => p.projectType === "Personal Project").length})
+              Personal / Open-Source Systems ({projects.filter((p) => p.projectType === "Personal / Open Source").length})
             </button>
             <button
               onClick={() => setProjectFilter("company")}
@@ -581,15 +581,15 @@ export default function Home() {
                   : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
               }`}
             >
-              Company Work ({projects.filter((p) => p.projectType === "Company Project").length})
+              Commercial &amp; Client Work ({projects.filter((p) => p.projectType === "Company Work").length})
             </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects
               .filter((proj) => {
-                if (projectFilter === "personal") return proj.projectType === "Personal Project";
-                if (projectFilter === "company") return proj.projectType === "Company Project";
+                if (projectFilter === "personal") return proj.projectType === "Personal / Open Source";
+                if (projectFilter === "company") return proj.projectType === "Company Work";
                 return true;
               })
               .map((proj, idx) => (
@@ -602,7 +602,7 @@ export default function Home() {
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span
                           className={`px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase border ${
-                            proj.projectType === "Personal Project"
+                            proj.projectType === "Personal / Open Source"
                               ? "bg-purple-950/60 text-purple-300 border-purple-800/50"
                               : "bg-emerald-950/60 text-emerald-300 border-emerald-800/50"
                           }`}
@@ -619,55 +619,56 @@ export default function Home() {
                       </span>
                     </div>
 
-                  <div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
-                      {proj.title}
-                    </h3>
-                    <p className="text-xs text-slate-400 font-medium">{proj.subtitle}</p>
+                    <div>
+                      <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                        {proj.title}
+                      </h3>
+                      <p className="text-xs text-slate-400 font-medium">{proj.subtitle}</p>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      {proj.description}
+                    </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    {proj.description}
-                  </p>
-                </div>
+                  <div className="pt-6 space-y-4 border-t border-white/[0.06] mt-6">
+                    <div className="flex flex-wrap gap-1.5">
+                      {proj.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] text-slate-300 border border-white/[0.06]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                <div className="pt-6 space-y-4 border-t border-white/[0.06] mt-6">
-                  <div className="flex flex-wrap gap-1.5">
-                    {proj.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-white/[0.04] text-slate-300 border border-white/[0.06]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="pt-1 flex items-center gap-2">
-                    <a
-                      href={proj.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/20 text-xs font-semibold transition-all duration-300"
-                    >
-                      <span>Explore Live Application</span>
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                    {proj.githubUrl && (
+                    <div className="pt-1 flex items-center gap-2">
                       <a
-                        href={proj.githubUrl}
+                        href={proj.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/[0.08] text-xs font-semibold transition-all duration-300"
-                        title="View Source on GitHub"
+                        className="inline-flex items-center justify-center gap-2 flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/20 text-xs font-semibold transition-all duration-300"
                       >
-                        <Github className="w-4 h-4" />
+                        <span>Explore Live Application</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
                       </a>
-                    )}
+                      {proj.githubUrl && (
+                        <a
+                          href={proj.githubUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/[0.08] text-xs font-semibold transition-all duration-300"
+                          title="View Source on GitHub"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          <span className="hidden sm:inline">Source</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </section>
 
