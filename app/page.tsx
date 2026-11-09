@@ -29,6 +29,7 @@ import {
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [projectFilter, setProjectFilter] = useState("all");
 
   const copyEmail = () => {
     navigator.clipboard.writeText("jeevankishorea@gmail.com");
@@ -42,9 +43,10 @@ export default function Home() {
       subtitle: "Real-Time Collaborative Workspace & Document Engine",
       description:
         "Engineered a real-time collaborative workspace featuring conflict-free WebSocket synchronization, monotonic revisions, 20fps live SVG cursor canvas, rich Markdown formatting toolbar, templates, export hub, and dual-mode persistence (57 automated tests).",
-      tags: ["Next.js 16", "React 19", "Socket.io", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Docker"],
+      tags: ["Personal Project", "Next.js 16", "React 19", "Socket.io", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Docker"],
       liveUrl: "https://syncspace-dashboard.vercel.app",
       githubUrl: "https://github.com/Jeevan-a10/syncspace-dashboard",
+      projectType: "Personal Project",
       category: "Real-Time Collaboration",
       metric: "Live in Production",
     },
@@ -53,9 +55,10 @@ export default function Home() {
       subtitle: "Developer Workspace & Milestone Tracker",
       description:
         "Engineered a production-ready developer workspace with real-time analytics, RBAC JWT auth, 47 automated tests, in-memory MongoDB fallback, and live event audit streaming.",
-      tags: ["Next.js 16", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth"],
+      tags: ["Personal Project", "Next.js 16", "Node.js", "Express", "MongoDB", "Tailwind CSS", "JWT Auth", "Docker"],
       liveUrl: "https://devpulse-dashboard-pi.vercel.app/login",
       githubUrl: "https://github.com/Jeevan-a10/devpulse-dashboard",
+      projectType: "Personal Project",
       category: "Full-Stack SaaS",
       metric: "Live in Production",
     },
@@ -64,18 +67,20 @@ export default function Home() {
       subtitle: "Enterprise Business Finance & Ledger Platform",
       description:
         "Engineered financial accounting dashboards and analytics modules. Integrated dynamic client workflows with robust microservices REST APIs for high-throughput business reporting.",
-      tags: ["React.js", "Spring Boot", "Microservices", "REST APIs", "PostgreSQL"],
+      tags: ["Company Project", "React.js", "Spring Boot", "Microservices", "REST APIs", "PostgreSQL"],
       liveUrl: "https://khatatracker.com/",
+      projectType: "Company Project",
       category: "FinTech Platform",
-      metric: "Live in Production",
+      metric: "Enterprise Production",
     },
     {
       title: "EKAM Network",
       subtitle: "B2B Enterprise Business Network",
       description:
         "Built responsive web interfaces with state management, dynamic form validation, and secure authentication flows. Integrated multi-role access control for enterprise clients.",
-      tags: ["React.js", "Node.js", "REST APIs", "State Management", "Tailwind CSS"],
+      tags: ["Company Project", "React.js", "Node.js", "REST APIs", "State Management", "Tailwind CSS"],
       liveUrl: "https://www.ekamnetwork.com/login",
+      projectType: "Company Project",
       category: "Enterprise Suite",
       metric: "Active Users",
     },
@@ -84,10 +89,11 @@ export default function Home() {
       subtitle: "Hospitality & Room Booking Platform",
       description:
         "Developed a mobile-optimized hotel website featuring interactive room galleries, real-time enquiry workflows, and streamlined reservation inquiries.",
-      tags: ["React.js", "JavaScript (ES6+)", "Responsive UI", "Booking APIs"],
+      tags: ["Company Project", "React.js", "JavaScript (ES6+)", "Responsive UI", "Booking APIs"],
       liveUrl: "https://www.hotelsrisailasnest.com/",
+      projectType: "Company Project",
       category: "Hospitality Web",
-      metric: "Responsive & Fast",
+      metric: "Live & Responsive",
     },
   ];
 
@@ -545,22 +551,73 @@ export default function Home() {
             </a>
           </div>
 
+          {/* Project Type Filter Pills */}
+          <div className="flex flex-wrap items-center gap-2 pt-2">
+            <button
+              onClick={() => setProjectFilter("all")}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                projectFilter === "all"
+                  ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 shadow-sm shadow-cyan-500/10"
+                  : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
+              }`}
+            >
+              All Projects ({projects.length})
+            </button>
+            <button
+              onClick={() => setProjectFilter("personal")}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                projectFilter === "personal"
+                  ? "bg-purple-500/20 text-purple-300 border border-purple-500/40 shadow-sm shadow-purple-500/10"
+                  : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
+              }`}
+            >
+              Personal Builds ({projects.filter((p) => p.projectType === "Personal Project").length})
+            </button>
+            <button
+              onClick={() => setProjectFilter("company")}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                projectFilter === "company"
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm shadow-emerald-500/10"
+                  : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.05] border border-white/[0.06]"
+              }`}
+            >
+              Company Work ({projects.filter((p) => p.projectType === "Company Project").length})
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((proj, idx) => (
-              <div
-                key={idx}
-                className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300 shadow-xl"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wider uppercase bg-cyan-950/60 text-cyan-400 border border-cyan-800/50">
-                      {proj.category}
-                    </span>
-                    <span className="text-[11px] font-medium text-emerald-400 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                      {proj.metric}
-                    </span>
-                  </div>
+            {projects
+              .filter((proj) => {
+                if (projectFilter === "personal") return proj.projectType === "Personal Project";
+                if (projectFilter === "company") return proj.projectType === "Company Project";
+                return true;
+              })
+              .map((proj, idx) => (
+                <div
+                  key={idx}
+                  className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-cyan-500/30 hover:bg-white/[0.04] transition-all duration-300 shadow-xl"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <span
+                          className={`px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase border ${
+                            proj.projectType === "Personal Project"
+                              ? "bg-purple-950/60 text-purple-300 border-purple-800/50"
+                              : "bg-emerald-950/60 text-emerald-300 border-emerald-800/50"
+                          }`}
+                        >
+                          {proj.projectType}
+                        </span>
+                        <span className="px-2 py-0.5 rounded text-[10px] font-medium tracking-wide bg-cyan-950/40 text-cyan-400 border border-cyan-800/40">
+                          {proj.category}
+                        </span>
+                      </div>
+                      <span className="text-[11px] font-medium text-emerald-400 flex items-center gap-1 shrink-0">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                        {proj.metric}
+                      </span>
+                    </div>
 
                   <div>
                     <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
