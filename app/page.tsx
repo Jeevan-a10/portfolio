@@ -38,6 +38,17 @@ export default function Home() {
 
   const projects = [
     {
+      title: "SyncSpace",
+      subtitle: "Real-Time Collaborative Workspace & Document Engine",
+      description:
+        "Engineered a real-time collaborative workspace featuring conflict-free WebSocket synchronization, monotonic revisions, 20fps live SVG cursor canvas, rich Markdown formatting toolbar, templates, export hub, and dual-mode persistence (57 automated tests).",
+      tags: ["Next.js 16", "React 19", "Socket.io", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Docker"],
+      liveUrl: "https://syncspace-dashboard.vercel.app",
+      githubUrl: "https://github.com/Jeevan-a10/syncspace-dashboard",
+      category: "Real-Time Collaboration",
+      metric: "Live in Production",
+    },
+    {
       title: "DevPulse",
       subtitle: "Developer Workspace & Milestone Tracker",
       description:
