@@ -191,12 +191,8 @@ export default function Home() {
       {/* Confetti Burst Particle Canvas */}
       <ConfettiEffect trigger={triggerConfetti} onComplete={() => setTriggerConfetti(false)} />
 
-      {/* Ambient Floating Glow Orbs */}
+      {/* Clean Subtle Grid Pattern Background */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-8%] left-[15%] w-[550px] h-[550px] bg-cyan-600/15 rounded-full blur-[140px] animate-float-slow" />
-        <div className="absolute top-[38%] right-[8%] w-[620px] h-[620px] bg-indigo-600/12 rounded-full blur-[160px] animate-float-reverse animation-delay-2000" />
-        <div className="absolute bottom-[10%] left-[8%] w-[520px] h-[520px] bg-emerald-600/12 rounded-full blur-[150px] animate-pulse-glow" />
-        {/* Subtle Tech Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f29370f_1px,transparent_1px),linear-gradient(to_bottom,#1f29370f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
 
@@ -207,13 +203,11 @@ export default function Home() {
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#080c14]/80 border-b border-white/[0.06] transition-all">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[1px] shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/50 group-hover:scale-105 transition-all duration-300">
-              <div className="w-full h-full bg-[#0b1120] rounded-[11px] flex items-center justify-center font-mono font-bold text-sm text-cyan-400 group-hover:text-cyan-300">
-                JK
-              </div>
+            <div className="w-8 h-8 rounded-lg bg-cyan-950/40 border border-cyan-800/50 flex items-center justify-center font-mono font-bold text-xs text-cyan-400 group-hover:border-cyan-500/50 transition-colors">
+              JK
             </div>
             <span className="font-semibold tracking-tight text-slate-200 group-hover:text-white transition-colors">
-              Jeevan<span className="text-cyan-400 animate-pulse">.dev</span>
+              Jeevan<span className="text-cyan-400">.dev</span>
             </span>
           </a>
 
@@ -233,7 +227,7 @@ export default function Home() {
                 className="hover:text-cyan-300 relative py-1 transition-colors group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-full rounded-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 transition-all duration-300 group-hover:w-full rounded-sm" />
               </a>
             ))}
           </nav>
@@ -243,7 +237,7 @@ export default function Home() {
               href="https://github.com/Jeevan-a10"
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-slate-400 hover:text-white hover:bg-white/[0.06] rounded-lg transition-all hover:scale-110"
+              className="p-2 text-slate-400 hover:text-white hover:bg-white/[0.06] rounded-lg transition-colors"
               title="GitHub"
             >
               <Github className="w-4 h-4" />
@@ -252,16 +246,16 @@ export default function Home() {
               href="https://www.linkedin.com/in/jeevankishorea"
               target="_blank"
               rel="noreferrer"
-              className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-white/[0.06] rounded-lg transition-all hover:scale-110"
+              className="p-2 text-slate-400 hover:text-cyan-400 hover:bg-white/[0.06] rounded-lg transition-colors"
               title="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
             </a>
             <a
               href="#contact"
-              className="ml-2 inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 hover:bg-cyan-900/50 hover:border-cyan-500/50 rounded-full shadow-sm shadow-cyan-500/10 hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105"
+              className="ml-2 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-cyan-300 bg-cyan-950/50 border border-cyan-800/60 hover:bg-cyan-900/40 hover:border-cyan-500/50 rounded-md transition-colors"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Get in Touch</span>
             </a>
           </div>
@@ -306,19 +300,16 @@ export default function Home() {
         <section id="home" className="pt-8 sm:pt-16">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
             <ScrollReveal direction="up" duration={700} className="flex-1 space-y-6 text-center lg:text-left">
-              {/* Status Badge with Live Ping Wave */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 shadow-sm backdrop-blur-sm hover:border-cyan-500/30 transition-all">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                </span>
+              {/* Status Badge with Solid Indicator */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300">
+                <span className="inline-flex rounded-full h-2 w-2 bg-emerald-400" />
                 <span>Full Stack Developer @ Anju Siima Technologies</span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
                 Engineering Scalable{" "}
-                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent inline-block hover:scale-[1.01] transition-transform">
+                <span className="text-cyan-400 inline-block">
                   Web Applications
                 </span>{" "}
                 &amp; Cloud Architectures.
@@ -341,24 +332,20 @@ export default function Home() {
               </p>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
                 <a
                   href="#projects"
-                  className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:brightness-110 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-sm transition-colors"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    <span>Explore Featured Work</span>
-                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                  {/* Subtle shine sweep */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+                  <span>Explore Featured Work</span>
+                  <ChevronRight className="w-4 h-4" />
                 </a>
 
                 <a
                   href="https://www.linkedin.com/in/jeevankishorea"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.08] hover:border-cyan-500/40 text-slate-200 font-medium text-sm transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-slate-200 font-medium text-sm transition-colors"
                 >
                   <Linkedin className="w-4 h-4 text-cyan-400" />
                   <span>LinkedIn</span>
@@ -368,7 +355,7 @@ export default function Home() {
                   href="https://github.com/Jeevan-a10"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.08] hover:border-slate-400/40 text-slate-200 font-medium text-sm transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-slate-200 font-medium text-sm transition-colors"
                 >
                   <Github className="w-4 h-4 text-slate-300" />
                   <span>GitHub</span>
@@ -400,20 +387,17 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            {/* Profile Avatar Card with Interactive 3D Tilt & Floating Badges */}
+            {/* Profile Avatar Card with Interactive 3D Tilt */}
             <ScrollReveal direction="scale" duration={800} className="relative group">
-              <TiltCard maxTilt={14} className="relative z-10">
-                {/* Rotating Ambient Aura */}
-                <div className="absolute -inset-2 rounded-3xl bg-gradient-to-r from-cyan-500 via-indigo-500 to-emerald-500 opacity-30 blur-xl group-hover:opacity-70 transition duration-700 animate-spin-slow" />
-
-                <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0b1120] shadow-2xl">
+              <TiltCard maxTilt={10} className="relative z-10">
+                <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-2xl overflow-hidden border border-white/[0.12] bg-[#0b1120] shadow-xl">
                   <img
                     src="/images/avatar.jpg"
                     alt="Jeevan Kishore Arigela"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#080c14] via-transparent to-transparent opacity-65" />
-                  <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl backdrop-blur-md bg-black/50 border border-white/[0.12] text-center shadow-lg">
+                  <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl backdrop-blur-md bg-black/60 border border-white/[0.12] text-center shadow-lg">
                     <span className="text-xs font-semibold text-white tracking-wide block">
                       Jeevan Kishore Arigela
                     </span>
@@ -422,13 +406,13 @@ export default function Home() {
                 </div>
               </TiltCard>
 
-              {/* Floating Tech Badges with oscillation */}
-              <div className="hidden sm:flex absolute -top-4 -right-6 z-20 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0b1120]/90 border border-cyan-500/30 text-cyan-300 text-xs font-mono shadow-xl backdrop-blur-md animate-float">
+              {/* Quiet Tech Badges */}
+              <div className="hidden sm:flex absolute -top-4 -right-6 z-20 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0b1120] border border-cyan-500/30 text-cyan-300 text-xs font-mono shadow-md">
                 <Zap className="w-3.5 h-3.5 text-cyan-400" />
                 <span>Next.js 14 / React 18</span>
               </div>
 
-              <div className="hidden sm:flex absolute -bottom-5 -left-6 z-20 items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#0b1120]/90 border border-emerald-500/30 text-emerald-300 text-xs font-mono shadow-xl backdrop-blur-md animate-float-reverse">
+              <div className="hidden sm:flex absolute -bottom-5 -left-6 z-20 items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0b1120] border border-emerald-500/30 text-emerald-300 text-xs font-mono shadow-md">
                 <Cloud className="w-3.5 h-3.5 text-emerald-400" />
                 <span>AWS EC2 &amp; S3 Native</span>
               </div>
@@ -475,8 +459,8 @@ export default function Home() {
             <ScrollReveal direction="up" delay={200} className="md:col-span-1">
               <SpotlightCard className="p-8 flex flex-col justify-between space-y-6 h-full">
                 <div className="space-y-4">
-                  <h3 className="text-sm font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                  <h3 className="text-sm font-semibold text-cyan-400 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                     Engineering Principles
                   </h3>
                   <ul className="space-y-3 text-sm text-slate-300">
@@ -487,7 +471,7 @@ export default function Home() {
                       "Pixel-perfect responsive design systems",
                     ].map((principle, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 group">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                         <span className="group-hover:text-slate-100 transition-colors">{principle}</span>
                       </li>
                     ))}
@@ -495,8 +479,8 @@ export default function Home() {
                 </div>
 
                 <div className="p-4 rounded-xl bg-cyan-950/30 border border-cyan-800/40 text-xs text-cyan-200 shadow-sm">
-                  💡 <span className="font-semibold">Goal:</span> Always deliver software that solves tangible
-                  business problems and delights users.
+                  <span className="font-semibold text-cyan-300">Focus:</span> Deliver reliable software that solves tangible
+                  business problems and scales predictably.
                 </div>
               </SpotlightCard>
             </ScrollReveal>
@@ -507,7 +491,7 @@ export default function Home() {
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs text-slate-400 px-1">
                 <span className="flex items-center gap-1.5 font-mono">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   Live Verification &amp; Engineering Stream
                 </span>
                 <span className="text-[11px] text-slate-500 hidden sm:inline">
@@ -535,8 +519,8 @@ export default function Home() {
           <div className="relative pl-6 sm:pl-8 border-l border-white/[0.1] space-y-8">
             <ScrollReveal direction="left" delay={150}>
               <div className="relative group">
-                {/* Glowing Animated Node on Timeline */}
-                <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-[#080c14] shadow-lg shadow-cyan-500/70 group-hover:scale-125 transition-transform" />
+                {/* Clean Solid Node on Timeline */}
+                <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 border-4 border-[#080c14]" />
 
                 <SpotlightCard className="p-6 sm:p-8 space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/[0.06] pb-4">
@@ -546,8 +530,8 @@ export default function Home() {
                       </h3>
                       <div className="text-cyan-400 font-medium">Anju Siima Technologies Pvt Ltd</div>
                     </div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold text-emerald-400 w-fit">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400 w-fit">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                       Jan 2025 – Present • Full-time
                     </div>
                   </div>
@@ -629,9 +613,9 @@ export default function Home() {
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <button
                 onClick={() => setProjectFilter("all")}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   projectFilter === "all"
-                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 shadow-sm shadow-cyan-500/20 scale-105"
+                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-500/40"
                     : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06]"
                 }`}
               >
@@ -639,9 +623,9 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setProjectFilter("personal")}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   projectFilter === "personal"
-                    ? "bg-purple-500/20 text-purple-300 border border-purple-500/50 shadow-sm shadow-purple-500/20 scale-105"
+                    ? "bg-purple-500/20 text-purple-300 border border-purple-500/40"
                     : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06]"
                 }`}
               >
@@ -649,9 +633,9 @@ export default function Home() {
               </button>
               <button
                 onClick={() => setProjectFilter("company")}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   projectFilter === "company"
-                    ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 shadow-sm shadow-emerald-500/20 scale-105"
+                    ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
                     : "text-slate-400 hover:text-white bg-white/[0.02] hover:bg-white/[0.06] border border-white/[0.06]"
                 }`}
               >
@@ -673,11 +657,11 @@ export default function Home() {
                     <div className="space-y-4">
                       {/* Project Image Preview if available */}
                       {proj.image && (
-                        <div className="relative w-full h-44 rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 mb-3 group-hover:border-cyan-500/40 transition-all duration-500">
+                        <div className="relative w-full h-44 rounded-xl overflow-hidden border border-white/[0.08] bg-black/40 mb-3 group-hover:border-cyan-500/40 transition-colors">
                           <img
                             src={proj.image}
                             alt={proj.title}
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                            className="w-full h-full object-cover object-top transition-transform duration-500 ease-out"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/90 via-transparent to-transparent opacity-60" />
                           <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 text-[10px] font-mono text-cyan-300">
@@ -689,7 +673,7 @@ export default function Home() {
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex flex-wrap items-center gap-1.5">
                           <span
-                            className={`px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase border ${
+                            className={`px-2.5 py-1 rounded-md text-[10px] font-medium border ${
                               proj.projectType === "Personal / Open Source"
                                 ? "bg-purple-950/60 text-purple-300 border-purple-800/50"
                                 : "bg-emerald-950/60 text-emerald-300 border-emerald-800/50"
@@ -697,12 +681,12 @@ export default function Home() {
                           >
                             {proj.projectType}
                           </span>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-medium tracking-wide bg-cyan-950/40 text-cyan-400 border border-cyan-800/40">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-medium bg-cyan-950/40 text-cyan-400 border border-cyan-800/40">
                             {proj.category}
                           </span>
                         </div>
                         <span className="text-[11px] font-medium text-emerald-400 flex items-center gap-1 shrink-0">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                           {proj.metric}
                         </span>
                       </div>
@@ -736,7 +720,7 @@ export default function Home() {
                           href={proj.liveUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center justify-center gap-2 flex-1 py-2.5 px-4 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/25 text-cyan-300 border border-cyan-500/30 text-xs font-semibold transition-all duration-300 hover:scale-[1.02] shadow-sm"
+                          className="inline-flex items-center justify-center gap-2 flex-1 py-2 px-3 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-medium transition-colors"
                         >
                           <span>Explore Live Application</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -746,7 +730,7 @@ export default function Home() {
                             href={proj.githubUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-slate-300 hover:text-white border border-white/[0.08] text-xs font-semibold transition-all duration-300 hover:scale-[1.02]"
+                            className="inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white border border-white/[0.08] text-xs font-medium transition-colors"
                             title="View Source on GitHub"
                           >
                             <Github className="w-3.5 h-3.5" />
@@ -835,7 +819,7 @@ export default function Home() {
               </div>
 
               <div className="text-left sm:text-right space-y-1">
-                <div className="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-semibold text-slate-300 w-fit sm:ml-auto">
+                <div className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 w-fit sm:ml-auto">
                   2020 – 2024
                 </div>
                 <p className="text-xs text-emerald-400 font-medium">
@@ -850,12 +834,9 @@ export default function Home() {
         <section id="contact" className="scroll-mt-24 space-y-8">
           <ScrollReveal direction="up" delay={100}>
             <SpotlightCard className="p-8 sm:p-12 relative overflow-hidden">
-              {/* Background Glow */}
-              <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-
               <div className="max-w-3xl space-y-6 relative z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300">
-                  📬 Let's Connect
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-xs font-medium text-cyan-300">
+                  Let's Connect
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -871,28 +852,28 @@ export default function Home() {
                 <div className="flex flex-wrap items-center gap-3 pt-2">
                   <button
                     onClick={copyEmail}
-                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.08] hover:border-cyan-500/40 text-sm text-slate-200 transition-all duration-300 hover:scale-[1.02]"
-                    title="Click to copy email and trigger confetti"
+                    className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.08] text-sm text-slate-200 transition-colors"
+                    title="Click to copy email"
                   >
-                    <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                    <Mail className="w-4 h-4 text-cyan-400" />
                     <span className="font-mono text-xs sm:text-sm">jeevankishorea@gmail.com</span>
                     <Copy className="w-3.5 h-3.5 text-slate-400 ml-1 group-hover:text-cyan-300" />
                     {copied && (
-                      <span className="text-xs text-emerald-400 font-semibold ml-1 animate-pulse">
-                        Copied! 🎉
+                      <span className="text-xs text-emerald-400 font-medium ml-1">
+                        Copied
                       </span>
                     )}
                   </button>
 
                   <a
                     href="tel:+918309600199"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.08] hover:border-emerald-500/40 text-sm text-slate-200 transition-all duration-300 hover:scale-[1.02]"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.05] hover:bg-white/[0.09] border border-white/[0.08] text-sm text-slate-200 transition-colors"
                   >
                     <Phone className="w-4 h-4 text-emerald-400" />
                     <span className="font-mono text-xs sm:text-sm">+91 8309600199</span>
                   </a>
 
-                  <div className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] text-xs sm:text-sm text-slate-400">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs sm:text-sm text-slate-400">
                     <MapPin className="w-4 h-4 text-amber-400" />
                     <span>Hyderabad, India</span>
                   </div>
@@ -904,7 +885,7 @@ export default function Home() {
                     href="https://www.linkedin.com/in/jeevankishorea"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-xs transition-all shadow-lg shadow-cyan-600/25 hover:shadow-cyan-600/50 hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium text-xs transition-colors"
                   >
                     <Linkedin className="w-4 h-4" />
                     <span>Connect on LinkedIn</span>
@@ -914,7 +895,7 @@ export default function Home() {
                     href="https://github.com/Jeevan-a10"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] text-slate-200 font-semibold text-xs border border-white/[0.1] hover:border-slate-300 transition-all hover:scale-105"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.14] text-slate-200 font-medium text-xs border border-white/[0.1] transition-colors"
                   >
                     <Github className="w-4 h-4" />
                     <span>Follow on GitHub</span>

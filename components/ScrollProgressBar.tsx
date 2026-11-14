@@ -25,7 +25,7 @@ export default function ScrollProgressBar() {
       aria-hidden="true"
     >
       <div
-        className="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 shadow-[0_0_10px_rgba(56,189,248,0.7)] transition-all duration-75 ease-out"
+        className="h-full bg-cyan-500 transition-all duration-75 ease-out"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
